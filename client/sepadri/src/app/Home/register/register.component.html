@@ -1,0 +1,73 @@
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div class="card card-signin flex-row my-5">
+            <div class="card-img-left d-none d-md-flex">
+               <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body">
+              <h5 class="card-title text-center">Register</h5>
+              <!--{{diagnostic}}-->
+              <form class=" form-group form-signin" #registerForm="ngForm"   >
+
+                <div class="form-group">
+                  <label   for="nom">nom :</label>
+                  <input type="text"  id="nom" class="form-control" required [(ngModel)]="model.nom"   name="nom" #nom="ngModel"  minlength="8" maxlength="20"#spy>
+
+                </div>
+
+                <div [hidden]="nom.valid || nom.pristine" class="alert alert-danger">
+                  Le nom d'utilisateur est obligatoire
+                </div>
+
+                <div class="form-group">
+                  <label for="prenon">prénon :</label>
+                  <input type="text"  class="form-control"  id="prenon" required [(ngModel)]="model.prenon" name="prenon" minlength="8" maxlength="20" #prenon="ngModel">
+
+                  <div [hidden]="prenon.valid || prenon.pristine" class="alert alert-danger">
+                    Le prenom d'utilisateur est obligatoire
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <input type="email" class="form-control"    ngModel [email]="true" id="email" required [(ngModel)]="model.email" name="email" maxlength="30" #email="ngModel" email>
+                  <label for="email">Email address</label>
+                  <div [hidden]="email.valid || email.pristine ||email.touched"  class="alert alert-danger">
+                    l'adresse email est incorrecte
+                  </div>
+                </div>
+
+                <hr>
+
+                <div class="form-group">
+                  <input type="password" id="password" class="form-control"  required [(ngModel)]="model.password" name="password" maxlength="40" #password="ngModel">
+                  <label for="password">Password</label>
+                  <div [hidden]="password.valid || password.pristine ||password.touched"  class="alert alert-danger">
+                    mote de passe  est obligatoire
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <input type="password" id="cpassword"  class="form-control"  required [(ngModel)]="model.cpassword" name="cpassword"  maxlength="40" #cpassword="ngModel">
+                  <label for="cpassword">Confirm password</label>
+
+                  <div [hidden]="cpassword.valid || cpassword.pristine ||cpassword.touched"  class="alert alert-danger">
+                    mote de passe  est obligatoire
+                  </div>
+                  <div [hidden]="cpassword.valid || cpassword.pristine ||cpassword.touched "  class="alert alert-danger">
+                    mote de passe  est obligatoire {{$cpassword}}
+                  </div>
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block text-uppercase"  type="submit"  [disabled]="!registerForm.form.valid">Register</button>
+                <a class="d-block text-center mt-2 small"routerLink="/login">Sign In</a>
+                <hr class="my-4">
+                <button class="btn btn-lg btn-facebook btn-block text-uppercase" type="submit" routerLink="/login"><i class="fab fa-facebook-f mr-2"></i> Sign up with Facebook</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>

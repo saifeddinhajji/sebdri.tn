@@ -1,0 +1,44 @@
+#contact{
+    margin-top: 50px;
+    width:100%;
+
+
+
+}
+
+#contact h1{
+ font-size: 25px;
+ font-weight: bold;
+ font-family: Montserrat;
+ text-align: center;
+
+}
+#contact p{
+
+    margin-top: 25px;
+}
+#contact textarea,input.form-control{
+    background-color: #F2F2F2 !important;
+     border: none;
+}
+
+#contact label{
+ color: #9B9898 !important;
+
+}
+
+#contact button{
+
+    background-color: #2DD393 !important;
+    border: none;
+}
+#contact .container-form{
+    padding:0 40px;
+}
+
+#contact .form-cadre{
+
+    padding: 23px;
+    box-shadow: 0px 3px 20px 0px #0000002b;
+    border-radius: 7px;
+}
